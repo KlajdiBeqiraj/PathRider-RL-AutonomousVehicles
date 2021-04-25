@@ -21,16 +21,29 @@ public class CarAgent : Agent
         sensor.AddObservation(targetTransform.localPosition);
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public override void OnActionReceived(ActionBuffers actions) //questa funzione è utlizzata per eseguire le azioni 
     {
-        
+
+        //definisco due variabili per lo spostamento
+        float moveX = actions.ContinuousActions[0];
+        float moveZ = actions.ContinuousActions[1];
+
+        //definisco una variabile che mi definsce la velocità dell'agente
+        float moveSpeed = 2.5f;
+
+        transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
-        
+        //in questo caso andiamo a usare le azioni generate dall'agente per modificare la sua posizone
+        ActionSegment<float> continousActions = actionsOut.ContinuousActions;
+
+        continousActions[1] = Input.GetAxisRaw("Vertical");
+        continousActions[0] = Input.GetAxisRaw("Horizontal");
+
     }
+
+    
 }
