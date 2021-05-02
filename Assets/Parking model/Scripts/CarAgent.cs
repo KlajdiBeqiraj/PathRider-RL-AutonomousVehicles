@@ -9,6 +9,8 @@ public class CarAgent : Agent
 {
     [SerializeField] private Transform targetTransform;
 
+    [SerializeField] private CarController controller;
+
 
     public override void OnEpisodeBegin()
     {
@@ -23,15 +25,13 @@ public class CarAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions) //questa funzione è utlizzata per eseguire le azioni 
     {
+        bool isBreaking;
+        //assegno il vaolore discreto con la barra spaziatrice
+        if (actions.DiscreteActions[0]==0) { isBreaking = false; }
+        else isBreaking = true;
 
-        //definisco due variabili per lo spostamento
-        float moveX = actions.ContinuousActions[0];
-        float moveZ = actions.ContinuousActions[1];
-
-        //definisco una variabile che mi definsce la velocità dell'agente
-        float moveSpeed = 2.5f;
-
-        transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
+        controller.GetInput(actions.ContinuousActions[0], actions.ContinuousActions[1], false);
+        controller.updateControler();
     }
 
 
@@ -40,9 +40,14 @@ public class CarAgent : Agent
         //in questo caso andiamo a usare le azioni generate dall'agente per modificare la sua posizone
         ActionSegment<float> continousActions = actionsOut.ContinuousActions;
 
+        ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
+
         continousActions[1] = Input.GetAxisRaw("Vertical");
         continousActions[0] = Input.GetAxisRaw("Horizontal");
-
+        
+        //assegno il vaolore discreto con la barra spaziatrice
+        if(Input.GetKey(KeyCode.Space)) { discreteActions[0] = 1; }
+        else discreteActions[0] = 0;
     }
 
     

@@ -1,0 +1,48 @@
+{
+    "My Behavior": {
+        "checkpoints": [
+            {
+                "steps": 5376,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-5376.onnx",
+                "reward": null,
+                "creation_time": 1619968418.0281405
+            },
+            {
+                "steps": 8064,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-8064.onnx",
+                "reward": null,
+                "creation_time": 1619968600.6484754
+            },
+            {
+                "steps": 0,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-0.onnx",
+                "reward": null,
+                "creation_time": 1619968638.9371572
+            },
+            {
+                "steps": 0,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-0.onnx",
+                "reward": null,
+                "creation_time": 1619968683.2178717
+            },
+            {
+                "steps": 512,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-512.onnx",
+                "reward": null,
+                "creation_time": 1619968726.0360727
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 512,
+            "file_path": "results\\ppo\\My Behavior.onnx",
+            "reward": null,
+            "creation_time": 1619968726.0360727
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.23.0",
+        "torch_version": "1.8.1+cpu",
+        "tensorflow_version": -1
+    }
+}

@@ -69,6 +69,7 @@
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\SharedAssets\Scripts\TargetContact.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\FoodCollector\Scripts\FoodCollectorAgent.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\GridWorld\Scripts\GridArea.cs" />
+    <Compile Include="Assets\Parking model\Scripts\CarController.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\WallJump\Scripts\WallJumpAgent.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Soccer\Scripts\SoccerBallController.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Tennis\Scripts\HitWall.cs" />
@@ -115,7 +116,6 @@
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Walker\Scripts\WalkerAgent.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Template\Scripts\TemplateAgent.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Soccer\Scripts\AgentSoccer.cs" />
-    <Compile Include="Assets\Parking model\Scripts\CarController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\AssetsEsterni\BrokenVector\LowPolyShaders\Shaders\LowPolyUnlitShader.shader" />

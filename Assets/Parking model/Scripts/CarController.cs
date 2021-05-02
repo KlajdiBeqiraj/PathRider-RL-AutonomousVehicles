@@ -29,9 +29,16 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
-    private void FixedUpdate()
+    //private void FixedUpdate()
+    //{
+    //    GetInput();
+    //    HandleMotor();
+    //    HandleSteering();
+    //    UpdateWheels();
+    //}
+
+    public void updateControler()
     {
-        GetInput();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
@@ -71,7 +78,14 @@ public class CarController : MonoBehaviour
         isBreaking = Input.GetKey(KeyCode.Space);
 
     }
-    
+
+    public  void GetInput(float hInput, float oInput,bool isBreakBool )
+    {
+        horizontalInput = hInput;
+        verticalInput = oInput;
+        isBreaking = isBreakBool;
+    }
+
     private void UpdateWheels()
     {
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
