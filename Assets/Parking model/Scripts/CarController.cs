@@ -8,10 +8,10 @@ public class CarController : MonoBehaviour
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
 
-    private float horizontalInput;
-    private float verticalInput;
-    private float currentSteerAngle;
-    private float currentbreakForce;
+    [SerializeField] private float horizontalInput;
+    [SerializeField] private float verticalInput;
+    [SerializeField] private float currentSteerAngle;
+    [SerializeField] private float currentbreakForce;
     private bool isBreaking;
 
     [SerializeField] private float motorForce;
@@ -31,13 +31,13 @@ public class CarController : MonoBehaviour
 
     //private void FixedUpdate()
     //{
-    //    GetInput();
-    //    HandleMotor();
-    //    HandleSteering();
-    //    UpdateWheels();
+        //    GetInput();
+        //    HandleMotor();
+        //    HandleSteering();
+        //    UpdateWheels();
     //}
 
-    public void updateControler()
+    public void updateController()
     {
         HandleMotor();
         HandleSteering();
@@ -49,10 +49,8 @@ public class CarController : MonoBehaviour
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
-        if (isBreaking)
-        {
-            ApplyBreaking();
-        }
+        ApplyBreaking();
+
     }
 
     private void ApplyBreaking()
@@ -79,10 +77,10 @@ public class CarController : MonoBehaviour
 
     }
 
-    public  void GetInput(float hInput, float oInput,bool isBreakBool )
+    public  void GetInput(float hInput, float vInput,bool isBreakBool )
     {
         horizontalInput = hInput;
-        verticalInput = oInput;
+        verticalInput = vInput;
         isBreaking = isBreakBool;
     }
 

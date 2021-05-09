@@ -10,7 +10,7 @@ public class CarAgent : Agent
     [SerializeField] private Transform targetTransform;
 
     [SerializeField] private CarController controller;
-
+    public bool isBreaking;
 
     public override void OnEpisodeBegin()
     {
@@ -25,13 +25,13 @@ public class CarAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions) //questa funzione è utlizzata per eseguire le azioni 
     {
-        bool isBreaking;
+
         //assegno il vaolore discreto con la barra spaziatrice
-        if (actions.DiscreteActions[0]==0) { isBreaking = false; }
+        if (actions.DiscreteActions[0] == 0) { isBreaking = false; }
         else isBreaking = true;
 
-        controller.GetInput(actions.ContinuousActions[0], actions.ContinuousActions[1], false);
-        controller.updateControler();
+        controller.GetInput(actions.ContinuousActions[0], actions.ContinuousActions[1], isBreaking);
+        controller.updateController();
     }
 
 
@@ -42,11 +42,13 @@ public class CarAgent : Agent
 
         ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
 
+        //continousActions[2] = Input.GetAxis("Jump");
         continousActions[1] = Input.GetAxisRaw("Vertical");
         continousActions[0] = Input.GetAxisRaw("Horizontal");
-        
+
+
         //assegno il vaolore discreto con la barra spaziatrice
-        if(Input.GetKey(KeyCode.Space)) { discreteActions[0] = 1; }
+        if (Input.GetKey(KeyCode.Space)) { discreteActions[0] = 1; }
         else discreteActions[0] = 0;
     }
 
