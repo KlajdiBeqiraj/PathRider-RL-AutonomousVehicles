@@ -15,6 +15,8 @@ public class CarAgent : Agent
     public override void OnEpisodeBegin()
     {
         //aggionare la poszione dell'oggetto nella scena per farlo spawnare random
+        this.transform.localPosition = new Vector3(13,6,-5);
+        this.transform.rotation = Quaternion.Euler(0, -67, 0);
     }
     public override void CollectObservations(VectorSensor sensor)
     {
