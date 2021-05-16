@@ -1,0 +1,65 @@
+{
+    "Autopark": {
+        "checkpoints": [
+            {
+                "steps": 700026,
+                "file_path": "results\\parkmodel\\Autopark\\Autopark-700026.onnx",
+                "reward": 0.030948489904403687,
+                "creation_time": 1621158822.2012048,
+                "auxillary_file_paths": [
+                    "results\\parkmodel\\Autopark\\Autopark-700026.pt"
+                ]
+            },
+            {
+                "steps": 999983,
+                "file_path": "results\\parkmodel\\Autopark\\Autopark-999983.onnx",
+                "reward": 0.034318404366909444,
+                "creation_time": 1621160919.7230604,
+                "auxillary_file_paths": [
+                    "results\\parkmodel\\Autopark\\Autopark-999983.pt"
+                ]
+            },
+            {
+                "steps": 1394857,
+                "file_path": "results\\parkmodel\\Autopark\\Autopark-1394857.onnx",
+                "reward": 0.03560178494080901,
+                "creation_time": 1621164276.556518,
+                "auxillary_file_paths": [
+                    "results\\parkmodel\\Autopark\\Autopark-1394857.pt"
+                ]
+            },
+            {
+                "steps": 1499965,
+                "file_path": "results\\parkmodel\\Autopark\\Autopark-1499965.onnx",
+                "reward": 0.040398172919213035,
+                "creation_time": 1621165383.148584,
+                "auxillary_file_paths": [
+                    "results\\parkmodel\\Autopark\\Autopark-1499965.pt"
+                ]
+            },
+            {
+                "steps": 1924920,
+                "file_path": "results\\parkmodel\\Autopark\\Autopark-1924920.onnx",
+                "reward": 0.0317787956936579,
+                "creation_time": 1621168594.9437354,
+                "auxillary_file_paths": [
+                    "results\\parkmodel\\Autopark\\Autopark-1924920.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1924920,
+            "file_path": "results\\parkmodel\\Autopark.onnx",
+            "reward": 0.0317787956936579,
+            "creation_time": 1621168594.9437354,
+            "auxillary_file_paths": [
+                "results\\parkmodel\\Autopark\\Autopark-1924920.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.8.1+cpu"
+    }
+}

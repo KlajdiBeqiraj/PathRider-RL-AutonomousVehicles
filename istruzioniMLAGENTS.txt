@@ -1,0 +1,4 @@
+mlagents-learn trainer_config2.yaml --run-id=parkmodel
+
+
+tensorboard --logdir results --port 6006

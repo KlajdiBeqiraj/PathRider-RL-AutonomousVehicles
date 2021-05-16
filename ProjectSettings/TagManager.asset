@@ -8,6 +8,14 @@ TagManager:
   - agent
   - sensor
   - wall
+  - wheel1
+  - wheel2
+  - wheel4
+  - wheel3
+  - parkingslot
+  - walkableSurface
+  - Environment
+  - borderPark
   layers:
   - Default
   - TransparentFX
