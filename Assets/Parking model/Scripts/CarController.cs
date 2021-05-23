@@ -10,6 +10,8 @@ public class CarController : MonoBehaviour
 
     [SerializeField] private float horizontalInput;
     [SerializeField] private float verticalInput;
+
+
     [SerializeField] private float currentSteerAngle;
     [SerializeField] private float currentbreakForce;
     private bool isBreaking;
@@ -17,6 +19,11 @@ public class CarController : MonoBehaviour
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
+
+    [SerializeField] public float acceleratorPedal;
+    [SerializeField] public float currentSteeringAngle;
+    [SerializeField] public float brakePedal;
+    [SerializeField] public bool reverse;
 
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
@@ -31,41 +38,55 @@ public class CarController : MonoBehaviour
 
     //private void FixedUpdate()
     //{
-        //    GetInput();
-        //    HandleMotor();
-        //    HandleSteering();
-        //    UpdateWheels();
+    //    GetInput();
+    //    HandleMotor();
+    //    HandleSteering();
+    //    UpdateWheels();
     //}
+
+
 
     public void updateController()
     {
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+        ApplyBreaking();
     }
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
-        currentbreakForce = isBreaking ? breakForce : 0f;
-        ApplyBreaking();
+        //frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
+        //frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+        if (reverse)
+        {
+            frontLeftWheelCollider.motorTorque = -motorForce * acceleratorPedal;
+            frontRightWheelCollider.motorTorque = -motorForce * acceleratorPedal;
+        }
+        else
+        {
+            frontLeftWheelCollider.motorTorque = motorForce * acceleratorPedal;
+            frontRightWheelCollider.motorTorque = motorForce * acceleratorPedal;
+        }
+
+        //currentbreakForce = isBreaking ? breakForce : 0f;
+        //ApplyBreaking();
 
     }
 
     private void ApplyBreaking()
     {
-        frontLeftWheelCollider.brakeTorque = currentbreakForce;
-        frontRightWheelCollider.brakeTorque = currentbreakForce;
-        rearLeftWheelCollider.brakeTorque = currentbreakForce;
-        rearRightWheelCollider.brakeTorque = currentbreakForce;
+        frontLeftWheelCollider.brakeTorque = breakForce* brakePedal;
+        frontRightWheelCollider.brakeTorque = breakForce * brakePedal;
+        rearLeftWheelCollider.brakeTorque = breakForce * brakePedal;
+        rearRightWheelCollider.brakeTorque = breakForce * brakePedal;
     }
 
     private void HandleSteering()
     {
-        currentSteerAngle = maxSteerAngle * horizontalInput;
-        frontLeftWheelCollider.steerAngle = currentSteerAngle;
-        frontRightWheelCollider.steerAngle = currentSteerAngle;
+        //currentSteerAngle = maxSteerAngle * horizontalInput;
+        frontLeftWheelCollider.steerAngle = currentSteeringAngle*maxSteerAngle;
+        frontRightWheelCollider.steerAngle = currentSteeringAngle*maxSteerAngle;
 
     }
 
@@ -77,11 +98,21 @@ public class CarController : MonoBehaviour
 
     }
 
-    public  void GetInput(float hInput, float vInput,bool isBreakBool )
+    public  void GetInput(float accp, float steerAngle,float b_pedal, int r )
     {
-        horizontalInput = hInput;
-        verticalInput = vInput;
-        isBreaking = isBreakBool;
+        //horizontalInput = hInput;
+        //verticalInput = vInput;
+        //isBreaking = isBreakBool;
+
+        acceleratorPedal = accp;
+        currentSteeringAngle = Mathf.Clamp(steerAngle, -1f, 1f);
+        brakePedal = b_pedal;
+
+        if(r==1 && acceleratorPedal*motorForce==0)
+        {
+            reverse = !reverse;
+        }
+
     }
 
     private void UpdateWheels()

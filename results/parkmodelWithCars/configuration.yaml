@@ -54,13 +54,13 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: parkmodel
+  run_id: parkmodelWithCars
   initialize_from: null
   load_model: false
   resume: true
   force: false
   train_model: false
-  inference: true
+  inference: false
   results_dir: results
 torch_settings:
   device: null

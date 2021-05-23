@@ -1,4 +1,6 @@
 mlagents-learn trainer_config2.yaml --run-id=parkmodel
 
+mlagents-learn trainer_config2.yaml --run-id=parkmodelWithCars
+
 
 tensorboard --logdir results --port 6006

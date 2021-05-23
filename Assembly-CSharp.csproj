@@ -63,6 +63,7 @@
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Bouncer\Scripts\BouncerTarget.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\PushBlock\Scripts\PushAgentBasic.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\GridWorld\Scripts\GridAgent.cs" />
+    <Compile Include="Assets\Parking model\Scripts\ChoosePark.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\TestScenes\TestCompressedTexture\TestTextureSensorComponent.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Pyramids\Scripts\PyramidArea.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Worm\Scripts\WormAgent.cs" />
@@ -118,7 +119,6 @@
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Walker\Scripts\WalkerAgent.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Template\Scripts\TemplateAgent.cs" />
     <Compile Include="Assets\AssetsEsterni\ML-Agents\Examples\Soccer\Scripts\AgentSoccer.cs" />
-    <Compile Include="Assets\Parking model\Scripts\ChoosePark.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\AssetsEsterni\BrokenVector\LowPolyShaders\Shaders\LowPolyUnlitShader.shader" />
@@ -741,6 +741,15 @@
     </Reference>
     <Reference Include="Unity.Barracuda.ONNX">
       <HintPath>Library\ScriptAssemblies\Unity.Barracuda.ONNX.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -2,58 +2,58 @@
     "Autopark": {
         "checkpoints": [
             {
-                "steps": 700026,
-                "file_path": "results\\parkmodel\\Autopark\\Autopark-700026.onnx",
-                "reward": 0.030948489904403687,
-                "creation_time": 1621158822.2012048,
+                "steps": 4742933,
+                "file_path": "results\\parkmodelWithCars\\Autopark\\Autopark-4742933.onnx",
+                "reward": 0.029268547768978886,
+                "creation_time": 1621325803.0402293,
                 "auxillary_file_paths": [
-                    "results\\parkmodel\\Autopark\\Autopark-700026.pt"
+                    "results\\parkmodelWithCars\\Autopark\\Autopark-4742933.pt"
                 ]
             },
             {
-                "steps": 999983,
-                "file_path": "results\\parkmodel\\Autopark\\Autopark-999983.onnx",
-                "reward": 0.034318404366909444,
-                "creation_time": 1621160919.7230604,
+                "steps": 4999996,
+                "file_path": "results\\parkmodelWithCars\\Autopark\\Autopark-4999996.onnx",
+                "reward": 0.03866284005052876,
+                "creation_time": 1621327687.3677838,
                 "auxillary_file_paths": [
-                    "results\\parkmodel\\Autopark\\Autopark-999983.pt"
+                    "results\\parkmodelWithCars\\Autopark\\Autopark-4999996.pt"
                 ]
             },
             {
-                "steps": 1394857,
-                "file_path": "results\\parkmodel\\Autopark\\Autopark-1394857.onnx",
-                "reward": 0.03560178494080901,
-                "creation_time": 1621164276.556518,
+                "steps": 5185948,
+                "file_path": "results\\parkmodelWithCars\\Autopark\\Autopark-5185948.onnx",
+                "reward": null,
+                "creation_time": 1621329026.891813,
                 "auxillary_file_paths": [
-                    "results\\parkmodel\\Autopark\\Autopark-1394857.pt"
+                    "results\\parkmodelWithCars\\Autopark\\Autopark-5185948.pt"
                 ]
             },
             {
-                "steps": 1499965,
-                "file_path": "results\\parkmodel\\Autopark\\Autopark-1499965.onnx",
-                "reward": 0.040398172919213035,
-                "creation_time": 1621165383.148584,
+                "steps": 5193969,
+                "file_path": "results\\parkmodelWithCars\\Autopark\\Autopark-5193969.onnx",
+                "reward": 0.044229202431083914,
+                "creation_time": 1621331596.3317327,
                 "auxillary_file_paths": [
-                    "results\\parkmodel\\Autopark\\Autopark-1499965.pt"
+                    "results\\parkmodelWithCars\\Autopark\\Autopark-5193969.pt"
                 ]
             },
             {
-                "steps": 1924920,
-                "file_path": "results\\parkmodel\\Autopark\\Autopark-1924920.onnx",
-                "reward": 0.0317787956936579,
-                "creation_time": 1621168594.9437354,
+                "steps": 5198479,
+                "file_path": "results\\parkmodelWithCars\\Autopark\\Autopark-5198479.onnx",
+                "reward": 0.03802826142372584,
+                "creation_time": 1621332936.6236665,
                 "auxillary_file_paths": [
-                    "results\\parkmodel\\Autopark\\Autopark-1924920.pt"
+                    "results\\parkmodelWithCars\\Autopark\\Autopark-5198479.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 1924920,
-            "file_path": "results\\parkmodel\\Autopark.onnx",
-            "reward": 0.0317787956936579,
-            "creation_time": 1621168594.9437354,
+            "steps": 5198479,
+            "file_path": "results\\parkmodelWithCars\\Autopark.onnx",
+            "reward": 0.03802826142372584,
+            "creation_time": 1621332936.6236665,
             "auxillary_file_paths": [
-                "results\\parkmodel\\Autopark\\Autopark-1924920.pt"
+                "results\\parkmodelWithCars\\Autopark\\Autopark-5198479.pt"
             ]
         }
     },

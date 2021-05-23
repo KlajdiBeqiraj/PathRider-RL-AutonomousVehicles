@@ -11,7 +11,6 @@ public class CarAgent : Agent
     [SerializeField] private CarController controller;
     [SerializeField] private ParkingSlot goalParking;
     [SerializeField] private ChoosePark csPark;
-    public bool isBreaking;
 
     public Vector3 position;
     public Vector3 forward; 
@@ -22,10 +21,6 @@ public class CarAgent : Agent
         rigidbody= GetComponent<Rigidbody>();
         controller= GetComponent<CarController>();
         csPark = GetComponent<ChoosePark>();
-
-
-        //creo dei bool che mi indicano quando le ruote sono all'interno del posteggio 
-        isBreaking = false;
     }
 
 
@@ -35,14 +30,23 @@ public class CarAgent : Agent
         float roty = Random.Range(0, 360);
         this.transform.rotation = Quaternion.Euler(0, roty, 0);
 
-        this.transform.localPosition = new Vector3(Random.Range(9.5f, 13f), 6.402f, Random.Range(-7.5f, 9f));
+        this.transform.localPosition = new Vector3(Random.Range(11.5f, 13f), 6.402f, Random.Range(-7.5f, 9f));
         rigidbody.velocity = new Vector3(0, 0, 0);
 
-        csPark.chooseSlot(this.transform.localPosition);
+        csPark.chooseSlot(this.transform.position);
         goalParking = csPark.nearestSlot;
+
+
+        float posz = goalParking.transform.position.z + Random.Range(-2, 2);
+
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, posz);
+
+        controller.GetInput(0, 0, 0, 0);
+
     }
     public override void CollectObservations(VectorSensor sensor)
     {
+
         //vado a osservare sia la posizione del agente sia la posizione del target
 
         Vector3 dirToTarget = (goalParking.transform.position - transform.position).normalized;
@@ -64,11 +68,7 @@ public class CarAgent : Agent
     public override void OnActionReceived(ActionBuffers actions) //questa funzione è utlizzata per eseguire le azioni 
     {
 
-        //assegno il vaolore discreto con la barra spaziatrice
-        //if (actions.DiscreteActions[0] == 0) { isBreaking = false; }
-        //else isBreaking = true;
-
-        controller.GetInput(actions.ContinuousActions[0], actions.ContinuousActions[1], isBreaking);
+        controller.GetInput(Mathf.Abs(actions.ContinuousActions[1]), actions.ContinuousActions[0], Mathf.Abs(actions.ContinuousActions[2]), actions.DiscreteActions[0]);
         controller.updateController();
     }
 
@@ -80,14 +80,16 @@ public class CarAgent : Agent
 
         ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
 
-        //continousActions[2] = Input.GetAxis("Jump");
-        continousActions[1] = Input.GetAxisRaw("Vertical");
+
+        float accPedal = Mathf.Clamp(System.Convert.ToSingle(Input.GetKey(KeyCode.W)) * Time.deltaTime * 100.0f, 0f, 100f);
+        float breakPedal = Mathf.Clamp(System.Convert.ToSingle(Input.GetKey(KeyCode.Space)) * Time.deltaTime * 100.0f, 0f, 100f);
+
         continousActions[0] = Input.GetAxisRaw("Horizontal");
+        continousActions[1] = accPedal;
+        continousActions[2] = breakPedal;
 
+        discreteActions[0] = System.Convert.ToInt32(Input.GetKey(KeyCode.E));
 
-        //assegno il vaolore discreto con la barra spaziatrice
-        //if (Input.GetKey(KeyCode.Space)) { discreteActions[0] = 1; }
-        //else discreteActions[0] = 0;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -102,7 +104,15 @@ public class CarAgent : Agent
             AddReward(-0.01f);
             EndEpisode();
         }
+    }
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "car")
+        {
+            AddReward(-0.01f);
+            EndEpisode();
+        }
     }
 
 

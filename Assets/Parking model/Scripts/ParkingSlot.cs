@@ -10,11 +10,28 @@ public class ParkingSlot : MonoBehaviour
 
     public bool isParked;
 
+    public GameObject parkedCar;
+
+    public bool isFreeSlot;
+
     private void Awake()
     {
         fullEndCollider = GetComponent<Collider>();
         IsOccupied = false;
         isParked = false;
+        isFreeSlot = false;
+    }
+
+    public void freeParking()
+    {
+        isFreeSlot = true;
+        parkedCar.SetActive(false);
+    }
+
+    public void occupiesParking()
+    {
+        isFreeSlot = false;
+        parkedCar.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
