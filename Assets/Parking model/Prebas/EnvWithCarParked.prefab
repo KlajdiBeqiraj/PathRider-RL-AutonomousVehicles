@@ -4002,6 +4002,10 @@ MonoBehaviour:
   motorForce: 400
   breakForce: 200
   maxSteerAngle: 30
+  acceleratorPedal: 0
+  currentSteeringAngle: 0
+  brakePedal: 0
+  reverse: 0
   frontLeftWheelCollider: {fileID: 7051706004800520393}
   frontRightWheelCollider: {fileID: 7051706004791697775}
   rearLeftWheelCollider: {fileID: 7051706004852877384}
@@ -4082,11 +4086,10 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 1000
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 7051706004987865712}
   controller: {fileID: 0}
   goalParking: {fileID: 0}
   csPark: {fileID: 0}
-  isBreaking: 0
   position: {x: 0, y: 0, z: 0}
   forward: {x: 0, y: 0, z: 0}
 --- !u!114 &7051706004987865723

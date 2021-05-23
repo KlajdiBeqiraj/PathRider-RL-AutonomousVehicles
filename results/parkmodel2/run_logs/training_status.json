@@ -2,22 +2,58 @@
     "Autopark": {
         "checkpoints": [
             {
-                "steps": 5134,
-                "file_path": "results\\parkmodel2\\Autopark\\Autopark-5134.onnx",
-                "reward": null,
-                "creation_time": 1621765376.4889896,
+                "steps": 46364,
+                "file_path": "results\\parkmodel2\\Autopark\\Autopark-46364.onnx",
+                "reward": -0.00016905383238606322,
+                "creation_time": 1621774968.1479867,
                 "auxillary_file_paths": [
-                    "results\\parkmodel2\\Autopark\\Autopark-5134.pt"
+                    "results\\parkmodel2\\Autopark\\Autopark-46364.pt"
+                ]
+            },
+            {
+                "steps": 48292,
+                "file_path": "results\\parkmodel2\\Autopark\\Autopark-48292.onnx",
+                "reward": -0.0018865497066953038,
+                "creation_time": 1621775033.8223786,
+                "auxillary_file_paths": [
+                    "results\\parkmodel2\\Autopark\\Autopark-48292.pt"
+                ]
+            },
+            {
+                "steps": 499972,
+                "file_path": "results\\parkmodel2\\Autopark\\Autopark-499972.onnx",
+                "reward": 0.0038734231020669087,
+                "creation_time": 1621778256.2576604,
+                "auxillary_file_paths": [
+                    "results\\parkmodel2\\Autopark\\Autopark-499972.pt"
+                ]
+            },
+            {
+                "steps": 999954,
+                "file_path": "results\\parkmodel2\\Autopark\\Autopark-999954.onnx",
+                "reward": 0.02168958218071031,
+                "creation_time": 1621782003.8189285,
+                "auxillary_file_paths": [
+                    "results\\parkmodel2\\Autopark\\Autopark-999954.pt"
+                ]
+            },
+            {
+                "steps": 1052929,
+                "file_path": "results\\parkmodel2\\Autopark\\Autopark-1052929.onnx",
+                "reward": 0.03131891624070704,
+                "creation_time": 1621782411.7902925,
+                "auxillary_file_paths": [
+                    "results\\parkmodel2\\Autopark\\Autopark-1052929.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 5134,
+            "steps": 1052929,
             "file_path": "results\\parkmodel2\\Autopark.onnx",
-            "reward": null,
-            "creation_time": 1621765376.4889896,
+            "reward": 0.03131891624070704,
+            "creation_time": 1621782411.7902925,
             "auxillary_file_paths": [
-                "results\\parkmodel2\\Autopark\\Autopark-5134.pt"
+                "results\\parkmodel2\\Autopark\\Autopark-1052929.pt"
             ]
         }
     },

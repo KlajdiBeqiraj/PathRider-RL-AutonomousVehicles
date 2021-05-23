@@ -106,9 +106,9 @@ public class CarController : MonoBehaviour
 
         acceleratorPedal = accp;
         currentSteeringAngle = Mathf.Clamp(steerAngle, -1f, 1f);
-        brakePedal = b_pedal;
+        brakePedal = b_pedal <= 0.3f ? 0f : b_pedal;
 
-        if(r==1 && acceleratorPedal*motorForce==0)
+        if(r==1)
         {
             reverse = !reverse;
         }
