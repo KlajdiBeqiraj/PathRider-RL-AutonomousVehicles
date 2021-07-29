@@ -1,6 +1,6 @@
 # Esame-Edge-Computing
 
-## 0.Vehicle model: 
+## 0.Introduction: 
 In addition to these standard library components , for our problem we had to insert an additional block that can model the behavior of the vehicle called CarController. 
 
 ## 1.	Vehicle model: 
