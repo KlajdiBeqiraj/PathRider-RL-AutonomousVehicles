@@ -1,4 +1,4 @@
-# Esame-Edge-Computing
+# PathRider-RL-AutonomousVehicles
 
 ## 0.Introduction: 
 In addition to these standard library components , for our problem we had to insert an additional block that can model the behavior of the vehicle called CarController. 
